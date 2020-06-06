@@ -1,11 +1,27 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
-		<meta charset="utf-8">
+		<meta charset="utf-8" />
 		<title>MarkDown-WYSIWYG Demo</title>
 		<script type="text/javascript" src="dist/markdown-wysiwyg.js"></script>
+		<style>
+			body {
+				padding:20px;
+			}
+		</style>
 	</head>
 	<body>
-		<markdown-wysiwyg></markdown-wysiwyg>
+		<markdown-wysiwyg># Heading 1
+Pipa
+
+**dfsg sdf**</markdown-wysiwyg>
+		<p>External text for reference...</p>
+		<script type="text/javascript">
+			document.querySelector('markdown-wysiwyg').onImageUpload = async (file) => {
+				return new Promise((res, rej) => {
+					setTimeout(()=>res(file.name), 2000);
+				})
+			};
+		</script>
 	</body>
 </html>
