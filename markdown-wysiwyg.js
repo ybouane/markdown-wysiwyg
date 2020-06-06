@@ -326,18 +326,21 @@ class MarkdownWysiwyg extends HTMLElement {
 		this.$.find('#dialog #image-editor .upload input').on('change', async function(e) {
 			var file = this[0].files[0];
 			this.trigger('reset');
-			this.closest('.upload').attr('data-loading', '');
-			ele.$.find('#dialog #image-editor .error-msg').empty();
 			if(file) {
-				try {
-					var url = await ele.onImageUpload.call(ele, file);
-					if(typeof url=='string')
-						ele.$.find('#dialog #image-editor [name="url"]').val(url);
-				} catch(e) {
-					ele.$.find('#dialog #image-editor .error-msg').text(e.toString());
+				this.closest('.upload').attr('data-loading', '');
+				ele.$.find('#dialog #image-editor .error-msg').empty();
+				if(file) {
+					try {
+						var url = await ele.onImageUpload.call(ele, file);
+						if(typeof url=='string')
+							ele.$.find('#dialog #image-editor [name="url"]').val(url);
+					} catch(e) {
+						ele.$.find('#dialog #image-editor .error-msg').text(e.toString());
+					}
+					this.closest('.upload').removeAttr('data-loading');
 				}
+			} else
 				this.closest('.upload').removeAttr('data-loading');
-			}
 		});
 		H(() => {
 			this.value = H(this).text();

@@ -1,6 +1,6 @@
 {
   "name": "markdown-wysiwyg",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Markdown WYSIWYG editor (returns markdown code)",
   "main": "markdown-wysiwyg.js",
   "scripts": {
