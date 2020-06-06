@@ -8,8 +8,16 @@ $primaryColorContrast:#FFFFFF;
 	box-sizing: border-box;
 	border:0px;
 }
+:host {
+	display: flex;
+	flex-flow: column;
+	align-items: stretch;
+}
 #wrapper {
-	display: block;
+	display: flex;
+	flex-flow: column;
+	flex:1 0 auto;
+	align-items: stretch;
 	border-radius: $wrapperRadius;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.35);
 	overflow: hidden;
@@ -318,6 +326,7 @@ $primaryColorContrast:#FFFFFF;
 	max-height: 80vh;
 	overflow: auto;
 	line-height: 140%;
+	flex:1 0 auto;
 	* {
 		vertical-align: baseline;
 	}
@@ -413,4 +422,5 @@ $primaryColorContrast:#FFFFFF;
 	color:#FFFFFF;
 	font-size: inherit;
 	resize: vertical;
+	flex:1 0 auto;
 }
