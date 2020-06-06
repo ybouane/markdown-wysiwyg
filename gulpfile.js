@@ -12,7 +12,8 @@ const compileJs = () => {
 				path		: path.resolve(__dirname, 'dist'),
 				filename	: 'markdown-wysiwyg.js',
 			},
-			mode: "development",
+			//mode: "development",
+			mode: "production",
 			module: {
 				rules: [
 					{
@@ -28,4 +29,4 @@ const compileJs = () => {
 };
 gulp.task('default', compileJs);
 
-gulp.watch(['./markdown-wysiwyg.js', '*.scss'], compileJs);
+//gulp.watch(['./markdown-wysiwyg.js', '*.scss'], compileJs);
