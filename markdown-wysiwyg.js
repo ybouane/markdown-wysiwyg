@@ -22,7 +22,7 @@ class MarkdownWysiwyg extends HTMLElement {
 		let tmpl = document.createElement('template');
 		tmpl.innerHTML = `
 		<style>${style}</style>
-		<div id="wrapper">
+		<div id="wrapper" part="wrapper">
 			<div id="dialog">
 				<form id="link-editor" action="" method="POST">
 					<strong>Link Editor</strong>
@@ -58,7 +58,7 @@ class MarkdownWysiwyg extends HTMLElement {
 					</div>
 				</form>
 			</div>
-			<div id="buttons">
+			<div id="buttons" part="buttons">
 				<div class="heading">
 					<strong></strong>
 					<div>

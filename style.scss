@@ -12,6 +12,8 @@ $primaryColorContrast:#FFFFFF;
 	display: flex;
 	flex-flow: column;
 	align-items: stretch;
+	--primary-color:$primaryColor;
+	--primary-color-contrast:$primaryColorContrast;
 }
 #wrapper {
 	display: flex;
@@ -96,8 +98,8 @@ $primaryColorContrast:#FFFFFF;
 			flex:1;
 		}
 		input[type="reset"], input[type="button"], input[type="submit"], .upload {
-			background: $primaryColor;
-			color: $primaryColorContrast;
+			background: var(--primary-color);
+			color: var(--primary-color-contrast);
 			font-weight: 600;
 			font-size: 0.8em;
 			padding: 10px 14px;
