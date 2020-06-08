@@ -100,6 +100,27 @@ document.querySelector('markdown-wysiwyg').onImageUpload = (file) => {
 };
 ```
 
+Customizations
+============
+You can customize the styling of the wysiwyg editor as follows:
+```
+markdown-wysiwyg {
+	height:500px; /* fixed height */
+	--primary-color:#d35400;
+	--primary-color-contrast:#FFFFFF;
+}
+markdown-wysiwyg::part(wrapper) {
+	box-shadow:none;
+	border:1px solid #d35400;
+}
+markdown-wysiwyg::part(buttons) {
+	background:#d35400;
+	--buttons-filter:invert(1);
+	--buttons-bg-highlight-color:rgba(255, 255, 255, 0.3);
+}
+
+```
+
 Known issues
 ============
 
